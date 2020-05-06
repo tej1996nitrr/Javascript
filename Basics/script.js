@@ -219,3 +219,45 @@ jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
 console.log(jane);
+//=====================================Objects and methods=============================================
+
+var john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    birthYear: 1992,
+    family: ['Jane', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function() {
+        this.age = 2018 - this.birthYear;
+    }
+}; 
+
+john.calcAge();
+console.log(john);
+    
+var jen = {
+    fullName: 'Jen Smith',
+    mass: 110,
+    height: 1.95,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+var mac = {
+    fullName: 'Mac Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function() {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+}
+if (jen.calcBMI() > mac.calcBMI()) {
+    console.log(jen.fullName + ' has a higher BMI of ' + jen.bmi);
+} else if (mac.bmi > jen.bmi) {
+    console.log(mac.fullName + ' has a higher BMI of ' + mac.bmi);
+} else {
+    console.log('They have the same BMI');
+}
