@@ -261,3 +261,148 @@ if (jen.calcBMI() > mac.calcBMI()) {
 } else {
     console.log('They have the same BMI');
 }
+//=====================================Loops and Iteration=============================================
+
+// for loop
+for (var i = 1; i <= 20; i += 2) {
+    console.log(i);
+}
+var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+for (var i = 0; i < john.length; i++) {
+    console.log(john[i]);
+}
+
+// While loop
+var i = 0;
+while(i < john.length) {
+    console.log(john[i]);
+    i++;
+}
+
+// continue and break statements
+var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') continue;
+    console.log("continue",john[i]);
+}
+for (var i = 0; i < john.length; i++) {
+    if (typeof john[i] !== 'string') break;
+    console.log('break',john[i]);
+}
+// Looping backwards
+for (var i = john.length - 1; i >= 0; i--) {
+    console.log('backwards',john[i]);
+}
+
+/*
+John and his family went to 5 different restaurants. The bills were $124, $48, $268, $180 and $42.
+John likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50
+ and $200, and 10% if the bill is more than $200.
+Implement a tip calculator using objects and loops:
+1. Create an object with an array for the bill values
+2. Add a method to calculate the tip
+3. This method should include a loop to iterate over all the paid bills and do the tip calculations
+4. As an output, create 1) a new array containing all tips, and 2) an array containing final paid 
+amounts (bill + tip). HINT: Start with two empty arrays [] as properties and then fill them up in the loop.
+EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 different restaurants. 
+The bills were $77, $375, $110, and $45.
+Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the bill is between 
+$100 and $300, and 25% if the bill is more than $300 (different than John).
+5. Implement the same functionality as before, this time using Mark's tipping rules
+6. Create a function (not a method) to calculate the average of a given array of tips.
+7. Calculate the average tip for each family
+8. Log to the console which family paid the highest tips on average
+*/
+
+var Jbill={
+
+    values:[],
+    tip:function(amount)
+    {
+        tipArr=[]
+        for(i in amount)
+        {
+            if(amount[i]<50)
+            {
+                tipArr.push(amount[i]*0.2)
+            }
+            else if(amount>=50 && amount<=200)
+            {
+                tipArr.push(amount[i]*0.15)             
+            }
+            else{
+
+                tipArr.push(amount[i]*0.1)
+            }
+        }
+        
+  return tipArr
+    },
+    totalPayment:function(billAmount)
+    {   
+        tipPayment = this.tip(billAmount)
+        netPayment=[]
+        for( i in billAmount)
+        {
+            netPayment.push(tipPayment[i]+billAmount[i])
+        }
+        return netPayment
+    }
+
+}
+var Mbill={
+
+    values:[],
+    tip:function(amount)
+    {
+        tipArr=[]
+        for(i in amount)
+        {
+            if(amount[i]<100)
+            {
+                tipArr.push(amount[i]*0.2)
+            }
+            else if(amount>=100 && amount<=300)
+            {
+                tipArr.push(amount[i]*0.10)             
+            }
+            else{
+
+                tipArr.push(amount[i]*0.25)
+            }
+        }
+        
+  return tipArr
+    },
+    totalPayment:function(billAmount)
+    {   
+        tipPayment = this.tip(billAmount)
+        netPayment=[]
+        for( i in billAmount)
+        {
+            netPayment.push(tipPayment[i]+billAmount[i])
+        }
+        return netPayment
+    }
+
+}
+
+
+console.log(Jbill.tip([124, 48, 268, 180,42]))
+console.log(Mbill.tip([77, 375, 110, 45]))
+console.log(Jbill.totalPayment([124, 48, 268, 180,42]))
+console.log(Mbill.totalPayment([77, 375, 110, 45]))
+
+function calcAverage(tips) {
+    var sum = 0;
+    for (var i = 0; i < tips.length; i++) {
+        sum = sum + tips[i];
+    }
+    return sum / tips.length;
+}
+
+Jtips = calcAverage(Jbill.tip([124, 48, 268, 180,42]));
+Mtips = calcAverage(Mbill.tip([77, 375, 110, 45]))
+
+console.log(Jtips,Mtips)
+
