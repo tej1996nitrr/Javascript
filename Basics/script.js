@@ -127,3 +127,11 @@ switch(job)
         console.log(firstname+" does something else")
 
 }
+//=====================================Functions=============================================
+ 
+function calculateAge(birthyear) {
+    return 2019-birthyear
+}
+var ageJohn = calculateAge(1998)
+var ageMark = calculateAge(1997)
+console.log(ageJohn,ageMark)
