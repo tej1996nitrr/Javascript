@@ -27,3 +27,25 @@ job="driver"
 console.log(firstname+' is a '+ age+' year old '+job+'. Is (s)he married?'+isMarried)
 // var lastname=prompt("What is the last name?")
 // console.log(firstname+" "+lastname)
+//=====================================Basic Operators=============================================
+
+var year,yearJohn,yearMark
+now=2019
+ageJohn=29
+ageMark=20
+yearJohn=now-ageJohn
+yearMark=now-ageMark
+console.log(yearJohn,yearMark)
+//math op
+console.log(now/2019)
+console.log(now+9)
+console.log(now-4)
+console.log(now*3)
+//logical op
+var johnOlder = ageJohn<ageMark 
+console.log(johnOlder)
+//typeof op
+console.log(typeof(johnOlder))
+console.log(typeof(age))
+var x
+console.log(typeof(x))
