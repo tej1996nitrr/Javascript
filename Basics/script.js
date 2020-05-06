@@ -405,4 +405,36 @@ Jtips = calcAverage(Jbill.tip([124, 48, 268, 180,42]));
 Mtips = calcAverage(Mbill.tip([77, 375, 110, 45]))
 
 console.log(Jtips,Mtips)
+//=====================================Scoping=============================================
+var a = 'Hello!';
+first();
+function first() {
+    var b = 'Hi!';
+    second();
+    function second() {
+        var c = 'Hey!';
+        console.log(a + b + c);
+    }
+}
+var a = 'Hello!';
+first();
+function first() {
+    var b = 'Hi!';
+    second();
+    function second() {
+        var c = 'Hey!';
+        third()
+    }
+}
+function third() {
+    var d = 'John';
+    //console.log(c);
+    console.log(a+d);
+}
+
+
+
+
+
+
 
