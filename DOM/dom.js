@@ -46,20 +46,30 @@
 //     items[i].style.backgroundColor="grey"
 // }
 //--------------------------------querySelector----------------------------------------------
-var header  = document.querySelector('#main-header')
-header.style.borderBottom='solid 3px #000'
+// var header  = document.querySelector('#main-header')
+// header.style.borderBottom='solid 3px #000'
 
-var input = document.querySelector('input')
-input.value="Hello World"
-var submit=document.querySelector('input[type="submit"]')
-submit.value="SEND"
+// var input = document.querySelector('input')
+// input.value="Hello World"
+// var submit=document.querySelector('input[type="submit"]')
+// submit.value="SEND"
 
-var item =document.querySelector('.list-group-item')
-item.style.color="red"
+// var item =document.querySelector('.list-group-item')
+// item.style.color="red"
 
-var last_item =document.querySelector('.list-group-item:last-child') 
-last_item.style.color="green"
+// var last_item =document.querySelector('.list-group-item:last-child') 
+// last_item.style.color="green"
 
-var second_item = document.querySelector('.list-group-item:nth-child(2)')
-second_item.style.color="blue"
+// var second_item = document.querySelector('.list-group-item:nth-child(2)')
+// second_item.style.color="blue"
 
+//--------------------------------querySelectorALl--------------------------------------------
+var titles =  document.querySelectorAll('.title')
+console.log(titles)
+titles[0].textContent="Hello"
+
+var odd = document.querySelectorAll('li:nth-child(odd)')
+for(var i=0;i<odd.length;i++)
+{
+    odd[i].style.backgroundColor="pink"
+}
