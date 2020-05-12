@@ -90,3 +90,8 @@ console.log(itemList.children)
 itemList.children[0].style.backgroundColor="lime"
 console.log(itemList.firstElementChild.textContent="Hello")
 console.log(itemList.lastElementChild.style.backgroundColor="blue")
+
+console.log(itemList.nextSibling)
+console.log(itemList.nextElementSibling)
+console.log(itemList.previousSibling)
+console.log(itemList.previousElementSibling)
