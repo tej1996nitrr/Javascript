@@ -64,12 +64,29 @@
 // second_item.style.color="blue"
 
 //--------------------------------querySelectorALl--------------------------------------------
-var titles =  document.querySelectorAll('.title')
-console.log(titles)
-titles[0].textContent="Hello"
+// var titles =  document.querySelectorAll('.title')
+// console.log(titles)
+// titles[0].textContent="Hello"
 
-var odd = document.querySelectorAll('li:nth-child(odd)')
-for(var i=0;i<odd.length;i++)
-{
-    odd[i].style.backgroundColor="pink"
-}
+// var odd = document.querySelectorAll('li:nth-child(odd)')
+// for(var i=0;i<odd.length;i++)
+// {
+//     odd[i].style.backgroundColor="pink"
+// }
+
+//--------------------------------Traversing DOM--------------------------------------------
+var itemList = document.querySelector('#items')
+
+// console.log(itemList.parentNode)
+// itemList.parentNode.style.backgroundColor="#aa0000"
+// console.log(itemList.parentNode.parentNode)
+
+console.log(itemList.parentElement)
+itemList.parentElement.style.backgroundColor="#aa0000"
+console.log(itemList.parentElement.parentElement)
+
+console.log(itemList.childNodes)
+console.log(itemList.children)
+itemList.children[0].style.backgroundColor="lime"
+console.log(itemList.firstElementChild.textContent="Hello")
+console.log(itemList.lastElementChild.style.backgroundColor="blue")
