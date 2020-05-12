@@ -81,17 +81,33 @@ var itemList = document.querySelector('#items')
 // itemList.parentNode.style.backgroundColor="#aa0000"
 // console.log(itemList.parentNode.parentNode)
 
-console.log(itemList.parentElement)
-itemList.parentElement.style.backgroundColor="#aa0000"
-console.log(itemList.parentElement.parentElement)
+// console.log(itemList.parentElement)
+// itemList.parentElement.style.backgroundColor="#aa0000"
+// console.log(itemList.parentElement.parentElement)
 
-console.log(itemList.childNodes)
-console.log(itemList.children)
-itemList.children[0].style.backgroundColor="lime"
-console.log(itemList.firstElementChild.textContent="Hello")
-console.log(itemList.lastElementChild.style.backgroundColor="blue")
+// console.log(itemList.childNodes)
+// console.log(itemList.children)
+// itemList.children[0].style.backgroundColor="lime"
+// console.log(itemList.firstElementChild.textContent="Hello")
+// console.log(itemList.lastElementChild.style.backgroundColor="blue")
 
-console.log(itemList.nextSibling)
-console.log(itemList.nextElementSibling)
-console.log(itemList.previousSibling)
-console.log(itemList.previousElementSibling)
+// console.log(itemList.nextSibling)
+// console.log(itemList.nextElementSibling)
+// console.log(itemList.previousSibling)
+// console.log(itemList.previousElementSibling)
+
+//--------------------------------Creating Element--------------------------------------------
+var newDiv = document.createElement('div')
+newDiv.className="Helllllo"
+console.log(newDiv)
+newDiv.id="World"
+console.log(newDiv)
+newDiv.setAttribute('title','Hello Div')
+console.log(newDiv)
+//creating new  text node
+var newDivText = document.createTextNode("VUU HUU")
+newDiv.appendChild(newDivText)
+console.log(newDiv)
+var container  =  document.querySelector('header .container')
+var h1 = document.querySelector('header h1')
+container.insertBefore(newDiv,h1)
